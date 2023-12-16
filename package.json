@@ -6,8 +6,8 @@
   "scripts": {
     "start": "directus start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "extensions": "cd extensions/directus-extension-app-bundle/ && npm i && npm run dev",
-    "build": "npm i && cd extensions/directus-extension-app-bundle/ && npm i && npm run build",
+    "extensions": "cd extensions/directus-extension-app-bundle/ && pnpm i && pnpm run dev",
+    "build": "pnpm i && cd extensions/directus-extension-app-bundle/ && pnpm i && pnpm run build",
     "snapshot": "directus schema snapshot ./snapshot.yaml",
     "snapshot:apply": "directus schema apply ./snapshot.yaml",
     "snapshot:apply:dry-run": "directus schema apply --dry-run ./snapshot.yaml",
@@ -18,9 +18,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@directus/extensions-sdk": "^10.1.5",
-    "directus": "^10.6.0",
-    "pg": "^8.11.0"
+    "@directus/extensions-sdk": "^10.2.0",
+    "directus": "^10.8.2",
+    "pg": "^8.11.3"
   },
   "engines": {
     "node": ">=18.0.0"

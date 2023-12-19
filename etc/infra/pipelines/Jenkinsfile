@@ -12,9 +12,6 @@ pipeline {
      environment {
         CODEBUILD_PROJECT     = 'general-build-backend-io'
     }
-    options {
-        parallelsAlwaysFailFast()
-}
     stages {
         stage('Setup') {
             steps{

@@ -37,7 +37,7 @@ pipeline {
         } // end stage Setup
         stage('CustomManageStep') {
             environment { 
-                BUILDSPEC_FILE = 'etc/infra/pipelines/dev/custommanagestep.yaml' 
+                BUILDSPEC_FILE = 'etc/infra/pipelines/custommanagestep.yaml' 
             }
             steps {
                 echo "### starting stage CustomManageStep ###"

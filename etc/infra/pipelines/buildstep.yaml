@@ -1,0 +1,48 @@
+version: 0.2
+
+env:
+  shell: bash
+  variables:
+    AWS_DEFAULT_REGION: us-east-1
+    IMAGE_REPO_NAME: extendstay-backend
+    AWS_ACCOUNT_ID: 070674026502
+    DOCKERFILE_PATH: etc/docker/Dockerfile
+    SECRET_BUCKET: s3://secrets-extendstay
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Starting install phase...
+      - apt-get update
+      - apt-get install jq
+
+  pre_build:
+    commands:
+      - echo pre_build phase...
+
+  build:
+    commands:
+      - echo Docker Build started on `date`
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - aws ecr batch-get-image --registry-id $AWS_ACCOUNT_ID --repository-name $IMAGE_REPO_NAME --image-ids imageTag=$GIT_COMMIT > image_result.json
+      - RESULT=$(jq '.failures | length' image_result.json) && rm image_result.json
+      - echo $RESULT
+      - aws s3 cp $SECRET_BUCKET/$IMAGE_REPO_NAME/$ENVIRONMENT/ etc/infra/ --recursive --region $AWS_DEFAULT_REGION
+      - aws s3 cp $SECRET_BUCKET/$IMAGE_REPO_NAME/$ENVIRONMENT/.env . --region $AWS_DEFAULT_REGION
+      - |
+        if   true; then
+          docker build -t $IMAGE_REPO_NAME -f $DOCKERFILE_PATH .
+          docker tag $IMAGE_REPO_NAME $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$GIT_COMMIT
+          docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$GIT_COMMIT
+        fi
+      - ls
+      - aws ecr describe-images --registry-id $AWS_ACCOUNT_ID --repository-name $IMAGE_REPO_NAME --image-ids imageTag=$GIT_COMMIT > temp.json
+      - TAG2=$(jq '.imageDetails[0].imageTags' temp.json)
+      - rm temp.json
+      - echo $TAG2
+      
+  post_build:
+    commands:
+      - echo Build completed on `date`

@@ -10,7 +10,7 @@ pipeline {
         string(name: 'IMAGE_ID', defaultValue: 'NONE', description: 'Enter a known image id you want to deploy. Leave default to build and deploy a new one.')
     }
      environment {
-        CODEBUILD_PROJECT     = 'general-build-backend-io'
+        CODEBUILD_PROJECT     = 'general-build-backend-dev-io'
     }
     stages {
         stage('Setup') {

@@ -5,6 +5,7 @@ WORKDIR /directus
 COPY . .
 
 # Install dependencies
+RUN npm i -g pnpm
 RUN npm run build
 
 EXPOSE 8055

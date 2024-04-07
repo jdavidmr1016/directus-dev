@@ -1,140 +1,72 @@
 version: 1
-directus: 14.1.2
+directus: 10.10.5
 vendor: postgres
 collections:
-  - collection: House_Management
+  - collection: Monetizing
     meta:
       accountability: all
       archive_app_filter: true
       archive_field: null
       archive_value: null
       collapse: open
-      collection: House_Management
-      color: null
+      collection: Monetizing
+      color: '#FFC23B'
       display_template: null
       group: null
       hidden: false
-      icon: house_siding
+      icon: monetization_on
       item_duplication_fields: null
-      note: House Management
-      preview_url: null
-      singleton: false
-      sort: 1
-      sort_field: null
-      translations:
-        - language: es-ES
-          translation: Manejo de Casas
-      unarchive_value: null
-      versioning: false
-  - collection: amenity
-    meta:
-      accountability: all
-      archive_app_filter: true
-      archive_field: null
-      archive_value: null
-      collapse: open
-      collection: amenity
-      color: '#C21292'
-      display_template: null
-      group: House_Management
-      hidden: false
-      icon: bath_private
-      item_duplication_fields: null
-      note: House Amenities
+      note: null
       preview_url: null
       singleton: false
       sort: 3
       sort_field: null
       translations:
         - language: en-US
-          translation: Amenities
-          singular: Amenity
-          plural: Amenities
+          translation: Monetizing
         - language: es-ES
-          translation: Amenidades
-          singular: Amenidad
-          plural: Amenidades
+          translation: Monetizando
       unarchive_value: null
       versioning: false
-    schema:
-      name: amenity
-  - collection: bookings
+  - collection: Posts
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: Posts
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: post_add
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations:
+        - language: en-US
+          translation: Posts
+        - language: es-ES
+          translation: Publicaciones
+      unarchive_value: null
+      versioning: false
+  - collection: category
     meta:
       accountability: all
       archive_app_filter: true
       archive_field: status
       archive_value: archived
       collapse: open
-      collection: bookings
-      color: '#2ECDA7'
+      collection: category
+      color: null
       display_template: null
-      group: null
+      group: Posts
       hidden: false
-      icon: real_estate_agent
-      item_duplication_fields: null
-      note: House Bookings
-      preview_url: null
-      singleton: false
-      sort: 2
-      sort_field: sort
-      translations:
-        - language: en-US
-          translation: Bookings
-          singular: Booking
-          plural: Bookings
-        - language: es-ES
-          translation: Reservaciones
-          singular: Reservacion
-          plural: Reservaciones
-      unarchive_value: draft
-      versioning: false
-    schema:
-      name: bookings
-  - collection: house_style
-    meta:
-      accountability: all
-      archive_app_filter: true
-      archive_field: null
-      archive_value: null
-      collapse: open
-      collection: house_style
-      color: '#FFFFFF'
-      display_template: null
-      group: House_Management
-      hidden: false
-      icon: cottage
-      item_duplication_fields: null
-      note: House Style
-      preview_url: null
-      singleton: false
-      sort: 4
-      sort_field: sort
-      translations:
-        - language: en-US
-          translation: House Styles
-          singular: House Style
-          plural: House Styles
-        - language: es-ES
-          translation: Estilo de las Casas
-          singular: Estilo de las Casas
-          plural: Estilos de las Casas
-      unarchive_value: null
-      versioning: false
-    schema:
-      name: house_style
-  - collection: house_type
-    meta:
-      accountability: all
-      archive_app_filter: true
-      archive_field: null
-      archive_value: null
-      collapse: open
-      collection: house_type
-      color: '#A2B5CD'
-      display_template: '-{{type}}'
-      group: House_Management
-      hidden: false
-      icon: domain
+      icon: tag
       item_duplication_fields: null
       note: null
       preview_url: null
@@ -143,57 +75,89 @@ collections:
       sort_field: sort
       translations:
         - language: en-US
-          translation: House Types
-          singular: House Type
-          plural: House Types
+          translation: Categories
+          singular: Category
+          plural: Categories
         - language: es-ES
-          translation: Tipos de Casas
-          singular: Tipos de Casa
-          plural: Tipos de Casas
-      unarchive_value: null
+          translation: Categorías
+          singular: Categoría
+          plural: Categorías
+      unarchive_value: draft
       versioning: false
     schema:
-      name: house_type
-  - collection: houses
+      name: category
+  - collection: comments
     meta:
       accountability: all
       archive_app_filter: true
       archive_field: null
       archive_value: null
       collapse: open
-      collection: houses
-      color: '#FFA732'
+      collection: comments
+      color: null
       display_template: null
-      group: House_Management
+      group: Posts
       hidden: false
-      icon: house
+      icon: mode_comment
       item_duplication_fields: null
-      note: Houses
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 3
+      sort_field: sort
+      translations:
+        - language: en-US
+          translation: Comment
+          singular: Comment
+          plural: Comments
+        - language: es-ES
+          translation: Comentario
+          singular: Comentario
+          plural: Comentarios
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: comments
+  - collection: post
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: status
+      archive_value: archived
+      collapse: open
+      collection: post
+      color: null
+      display_template: null
+      group: Posts
+      hidden: false
+      icon: article
+      item_duplication_fields: null
+      note: null
       preview_url: null
       singleton: false
       sort: 1
       sort_field: sort
       translations:
-        - language: en-US
-          translation: Houses
-          singular: House
-          plural: Houses
         - language: es-ES
-          translation: Casas
-          singular: Casa
-          plural: Casas
-      unarchive_value: null
+          translation: Publicación
+          singular: Publicación
+          plural: Publicaciones
+        - language: en-US
+          translation: Post
+          singular: Post
+          plural: Posts
+      unarchive_value: draft
       versioning: false
     schema:
-      name: houses
-  - collection: houses_amenity
+      name: post
+  - collection: post_category
     meta:
       accountability: all
       archive_app_filter: true
       archive_field: null
       archive_value: null
       collapse: open
-      collection: houses_amenity
+      collection: post_category
       color: null
       display_template: null
       group: null
@@ -203,512 +167,43 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: 3
+      sort: 2
       sort_field: null
       translations: null
       unarchive_value: null
       versioning: false
     schema:
-      name: houses_amenity
-  - collection: images
+      name: post_category
+  - collection: subscritions
     meta:
       accountability: all
       archive_app_filter: true
       archive_field: null
       archive_value: null
       collapse: open
-      collection: images
-      color: '#EF4040'
+      collection: subscritions
+      color: '#FFC23B'
       display_template: null
-      group: House_Management
-      hidden: true
-      icon: add_a_photo
+      group: Monetizing
+      hidden: false
+      icon: null
       item_duplication_fields: null
-      note: Home Images
+      note: null
       preview_url: null
       singleton: false
-      sort: 5
+      sort: 1
       sort_field: sort
-      translations:
-        - language: es-ES
-          translation: 'Fotos '
-          singular: Foto
-          plural: Fotos
-        - language: en-US
-          translation: Images
-          singular: Imagen
-          plural: Images
+      translations: null
       unarchive_value: null
       versioning: false
     schema:
-      name: images
+      name: subscritions
 fields:
-  - collection: amenity
-    field: amenity_name
-    type: string
-    meta:
-      collection: amenity
-      conditions: null
-      display: null
-      display_options:
-        conditionalFormatting: null
-        format: true
-      field: amenity_name
-      group: null
-      hidden: false
-      interface: input
-      note: ' Name'
-      options:
-        iconLeft: hiking
-        placeholder: Amenity name
-        trim: true
-      readonly: false
-      required: true
-      sort: 2
-      special: null
-      translations:
-        - language: en-US
-          translation: Amenity Name
-        - language: es-ES
-          translation: Nombre de la amenidad
-      validation:
-        _and:
-          - amenity_name:
-              _regex: ([A-Z])\w+
-      validation_message: Amenity names must be on mayuscules
-      width: full
-    schema:
-      name: amenity_name
-      table: amenity
-      data_type: character varying
-      default_value: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: amenity
-    field: date_created
-    type: timestamp
-    meta:
-      collection: amenity
-      conditions: null
-      display: datetime
-      display_options:
-        relative: true
-      field: date_created
-      group: null
-      hidden: true
-      interface: datetime
-      note: null
-      options: null
-      readonly: true
-      required: false
-      sort: 5
-      special:
-        - date-created
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: date_created
-      table: amenity
-      data_type: timestamp with time zone
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: amenity
-    field: date_updated
-    type: timestamp
-    meta:
-      collection: amenity
-      conditions: null
-      display: datetime
-      display_options:
-        relative: true
-      field: date_updated
-      group: null
-      hidden: true
-      interface: datetime
-      note: null
-      options: null
-      readonly: true
-      required: false
-      sort: 6
-      special:
-        - date-updated
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: date_updated
-      table: amenity
-      data_type: timestamp with time zone
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: amenity
-    field: houses
-    type: uuid
-    meta:
-      collection: amenity
-      conditions: null
-      display: related-values
-      display_options:
-        template: '{{amenities.amenity_name}}'
-      field: houses
-      group: null
-      hidden: true
-      interface: select-dropdown-m2o
-      note: null
-      options:
-        enableCreate: false
-        enableSelect: false
-        template: '{{amenities.amenity_name}}'
-      readonly: false
-      required: false
-      sort: 7
-      special:
-        - m2o
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: houses
-      table: amenity
-      data_type: uuid
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: houses
-      foreign_key_column: id
-  - collection: amenity
-    field: id
-    type: integer
-    meta:
-      collection: amenity
-      conditions: null
-      display: null
-      display_options: null
-      field: id
-      group: null
-      hidden: true
-      interface: input
-      note: null
-      options: null
-      readonly: true
-      required: false
-      sort: 1
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: id
-      table: amenity
-      data_type: integer
-      default_value: nextval('amenity_id_seq'::regclass)
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: false
-      is_unique: true
-      is_primary_key: true
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: amenity
-    field: sort
-    type: integer
-    meta:
-      collection: amenity
-      conditions: null
-      display: null
-      display_options: null
-      field: sort
-      group: null
-      hidden: true
-      interface: input
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: 4
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: sort
-      table: amenity
-      data_type: integer
-      default_value: null
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: bookings
-    field: book_end_date
-    type: date
-    meta:
-      collection: bookings
-      conditions: null
-      display: datetime
-      display_options:
-        format: short
-      field: book_end_date
-      group: null
-      hidden: false
-      interface: datetime
-      note: null
-      options: null
-      readonly: false
-      required: true
-      sort: 6
-      special: null
-      translations:
-        - language: en-US
-          translation: End day
-        - language: es-ES
-          translation: Día que termina
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: book_end_date
-      table: bookings
-      data_type: date
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: false
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: bookings
-    field: book_start_date
-    type: date
-    meta:
-      collection: bookings
-      conditions: null
-      display: datetime
-      display_options:
-        format: short
-      field: book_start_date
-      group: null
-      hidden: false
-      interface: null
-      note: null
-      options: null
-      readonly: false
-      required: true
-      sort: 5
-      special: null
-      translations:
-        - language: en-US
-          translation: Starting day
-        - language: es-ES
-          translation: Día que inicia
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: book_start_date
-      table: bookings
-      data_type: date
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: false
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: bookings
-    field: date_created
-    type: timestamp
-    meta:
-      collection: bookings
-      conditions: null
-      display: datetime
-      display_options:
-        relative: true
-      field: date_created
-      group: null
-      hidden: true
-      interface: datetime
-      note: null
-      options: null
-      readonly: true
-      required: false
-      sort: 9
-      special:
-        - date-created
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: date_created
-      table: bookings
-      data_type: timestamp with time zone
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: bookings
-    field: date_updated
-    type: timestamp
-    meta:
-      collection: bookings
-      conditions: null
-      display: datetime
-      display_options:
-        relative: true
-      field: date_updated
-      group: null
-      hidden: true
-      interface: datetime
-      note: null
-      options: null
-      readonly: true
-      required: false
-      sort: 11
-      special:
-        - date-updated
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: date_updated
-      table: bookings
-      data_type: timestamp with time zone
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: bookings
-    field: house_id
-    type: uuid
-    meta:
-      collection: bookings
-      conditions: null
-      display: related-values
-      display_options:
-        template: '{{house_image.$thumbnail}}{{house_address}}'
-      field: house_id
-      group: null
-      hidden: false
-      interface: select-dropdown-m2o
-      note: null
-      options:
-        enableCreate: false
-        template: '{{house_address}}'
-      readonly: false
-      required: true
-      sort: 3
-      special:
-        - m2o
-      translations:
-        - language: en-US
-          translation: House to rent
-        - language: es-ES
-          translation: Casa a rentar
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: house_id
-      table: bookings
-      data_type: uuid
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: houses
-      foreign_key_column: id
-  - collection: bookings
+  - collection: category
     field: id
     type: uuid
     meta:
-      collection: bookings
+      collection: category
       conditions: null
       display: null
       display_options: null
@@ -729,7 +224,7 @@ fields:
       width: full
     schema:
       name: id
-      table: bookings
+      table: category
       data_type: uuid
       default_value: null
       max_length: null
@@ -743,11 +238,70 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: bookings
+  - collection: category
+    field: status
+    type: string
+    meta:
+      collection: category
+      conditions: null
+      display: labels
+      display_options:
+        choices:
+          - text: $t:published
+            value: published
+            foreground: '#FFFFFF'
+            background: var(--theme--primary)
+          - text: $t:draft
+            value: draft
+            foreground: '#18222F'
+            background: '#D3DAE4'
+          - text: $t:archived
+            value: archived
+            foreground: '#FFFFFF'
+            background: var(--theme--warning)
+        showAsDot: true
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: $t:published
+            value: published
+          - text: $t:draft
+            value: draft
+          - text: $t:archived
+            value: archived
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: category
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: category
     field: sort
     type: integer
     meta:
-      collection: bookings
+      collection: category
       conditions: null
       display: null
       display_options: null
@@ -759,7 +313,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 2
+      sort: 4
       special: null
       translations: null
       validation: null
@@ -767,7 +321,7 @@ fields:
       width: full
     schema:
       name: sort
-      table: bookings
+      table: category
       data_type: integer
       default_value: null
       max_length: null
@@ -781,74 +335,11 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: bookings
-    field: status
-    type: string
-    meta:
-      collection: bookings
-      conditions: null
-      display: labels
-      display_options:
-        choices:
-          - text: Rent
-            value: rent
-            foreground: '#FFFFFF'
-            background: var(--theme--primary)
-          - text: Available
-            value: available
-            foreground: '#18222F'
-            background: '#2ECDA7'
-          - text: Maintainance
-            value: maintainance
-            foreground: '#FFFFFF'
-            background: var(--theme--warning)
-        showAsDot: true
-      field: status
-      group: null
-      hidden: true
-      interface: null
-      note: null
-      options:
-        choices:
-          - text: $t:published
-            value: published
-          - text: $t:draft
-            value: draft
-          - text: $t:archived
-            value: archived
-      readonly: false
-      required: false
-      sort: 7
-      special: null
-      translations:
-        - language: en-US
-          translation: Book type
-        - language: es-ES
-          translation: Tipo de renta
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: status
-      table: bookings
-      data_type: character varying
-      default_value: Rent
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: bookings
+  - collection: category
     field: user_created
     type: uuid
     meta:
-      collection: bookings
+      collection: category
       conditions: null
       display: user
       display_options: null
@@ -861,7 +352,7 @@ fields:
         template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
       readonly: true
       required: false
-      sort: 8
+      sort: 5
       special:
         - user-created
       translations: null
@@ -870,7 +361,7 @@ fields:
       width: half
     schema:
       name: user_created
-      table: bookings
+      table: category
       data_type: uuid
       default_value: null
       max_length: null
@@ -884,347 +375,11 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_users
       foreign_key_column: id
-  - collection: bookings
-    field: user_updated
-    type: uuid
-    meta:
-      collection: bookings
-      conditions: null
-      display: user
-      display_options: null
-      field: user_updated
-      group: null
-      hidden: true
-      interface: select-dropdown-m2o
-      note: null
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      readonly: true
-      required: false
-      sort: 10
-      special:
-        - user-updated
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: user_updated
-      table: bookings
-      data_type: uuid
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: directus_users
-      foreign_key_column: id
-  - collection: house_style
-    field: house_style
-    type: string
-    meta:
-      collection: house_style
-      conditions: null
-      display: formatted-value
-      display_options:
-        format: true
-      field: house_style
-      group: null
-      hidden: false
-      interface: input
-      note: null
-      options:
-        placeholder: null
-        trim: true
-      readonly: false
-      required: true
-      sort: 2
-      special: null
-      translations:
-        - language: en-US
-          translation: Style
-        - language: es-ES
-          translation: Estilo
-      validation:
-        _and:
-          - house_style:
-              _regex: ([A-Z])\w+
-      validation_message: House style name must be wrote on mayuscules
-      width: full
-    schema:
-      name: house_style
-      table: house_style
-      data_type: character varying
-      default_value: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: house_style
-    field: id
-    type: integer
-    meta:
-      collection: house_style
-      conditions: null
-      display: null
-      display_options: null
-      field: id
-      group: null
-      hidden: true
-      interface: input
-      note: null
-      options: null
-      readonly: true
-      required: false
-      sort: 1
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: id
-      table: house_style
-      data_type: integer
-      default_value: nextval('house_style_id_seq'::regclass)
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: false
-      is_unique: true
-      is_primary_key: true
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: house_style
-    field: sort
-    type: integer
-    meta:
-      collection: house_style
-      conditions: null
-      display: null
-      display_options: null
-      field: sort
-      group: null
-      hidden: true
-      interface: input
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: 3
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: sort
-      table: house_style
-      data_type: integer
-      default_value: null
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: house_type
-    field: id
-    type: integer
-    meta:
-      collection: house_type
-      conditions: null
-      display: null
-      display_options: null
-      field: id
-      group: null
-      hidden: true
-      interface: input
-      note: null
-      options: null
-      readonly: true
-      required: false
-      sort: 1
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: id
-      table: house_type
-      data_type: integer
-      default_value: nextval('house_type_id_seq'::regclass)
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: false
-      is_unique: true
-      is_primary_key: true
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: house_type
-    field: sort
-    type: integer
-    meta:
-      collection: house_type
-      conditions: null
-      display: null
-      display_options: null
-      field: sort
-      group: null
-      hidden: true
-      interface: input
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: 3
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: sort
-      table: house_type
-      data_type: integer
-      default_value: null
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: house_type
-    field: type
-    type: string
-    meta:
-      collection: house_type
-      conditions: null
-      display: formatted-value
-      display_options:
-        format: true
-      field: type
-      group: null
-      hidden: false
-      interface: input
-      note: null
-      options:
-        iconLeft: domain
-        trim: true
-      readonly: false
-      required: true
-      sort: 2
-      special: null
-      translations: null
-      validation:
-        _and:
-          - type:
-              _regex: ([A-Z])\w+
-      validation_message: House type names must be wrote in mayuscules
-      width: full
-    schema:
-      name: type
-      table: house_type
-      data_type: character varying
-      default_value: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: houses
-    field: amenities
-    type: alias
-    meta:
-      collection: houses
-      conditions: null
-      display: null
-      display_options: null
-      field: amenities
-      group: null
-      hidden: false
-      interface: list-o2m
-      note: null
-      options:
-        template: '{{amenity_name}}'
-      readonly: false
-      required: false
-      sort: 20
-      special:
-        - o2m
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-  - collection: houses
-    field: bookings
-    type: alias
-    meta:
-      collection: houses
-      conditions: null
-      display: related-values
-      display_options:
-        template: null
-      field: bookings
-      group: null
-      hidden: true
-      interface: list-o2m
-      note: null
-      options:
-        fields:
-          - book_end_date
-          - book_start_date
-        template: '{{book_start_date}}-{{book_end_date}}'
-      readonly: false
-      required: false
-      sort: 19
-      special:
-        - o2m
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-  - collection: houses
+  - collection: category
     field: date_created
     type: timestamp
     meta:
-      collection: houses
+      collection: category
       conditions: null
       display: datetime
       display_options:
@@ -1237,7 +392,7 @@ fields:
       options: null
       readonly: true
       required: false
-      sort: 16
+      sort: 6
       special:
         - date-created
       translations: null
@@ -1246,7 +401,7 @@ fields:
       width: half
     schema:
       name: date_created
-      table: houses
+      table: category
       data_type: timestamp with time zone
       default_value: null
       max_length: null
@@ -1260,11 +415,51 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: houses
+  - collection: category
+    field: user_updated
+    type: uuid
+    meta:
+      collection: category
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 7
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: category
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: category
     field: date_updated
     type: timestamp
     meta:
-      collection: houses
+      collection: category
       conditions: null
       display: datetime
       display_options:
@@ -1277,7 +472,7 @@ fields:
       options: null
       readonly: true
       required: false
-      sort: 18
+      sort: 8
       special:
         - date-updated
       translations: null
@@ -1286,7 +481,7 @@ fields:
       width: half
     schema:
       name: date_updated
-      table: houses
+      table: category
       data_type: timestamp with time zone
       default_value: null
       max_length: null
@@ -1300,269 +495,350 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: houses
-    field: divider-qcxgxe
-    type: alias
+  - collection: category
+    field: name
+    type: string
     meta:
-      collection: houses
+      collection: category
       conditions: null
-      display: null
+      display: formatted-value
       display_options: null
-      field: divider-qcxgxe
+      field: name
       group: null
       hidden: false
-      interface: presentation-divider
+      interface: input
       note: null
       options:
-        color: '#6644FF'
-        inlineTitle: true
-        title: Address
+        iconLeft: tag
+        placeholder: Nombre de mi categoria
       readonly: false
-      required: false
+      required: true
       sort: 3
-      special:
-        - alias
-        - no-data
+      special: null
       translations: null
       validation: null
       validation_message: null
       width: full
-  - collection: houses
-    field: divider-tphpfb
-    type: alias
+    schema:
+      name: name
+      table: category
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: comments
+    field: id
+    type: uuid
     meta:
-      collection: houses
+      collection: comments
       conditions: null
       display: null
       display_options: null
-      field: divider-tphpfb
+      field: id
       group: null
-      hidden: false
-      interface: presentation-divider
+      hidden: true
+      interface: input
       note: null
-      options:
-        color: '#3399FF'
-        inlineTitle: true
-        title: House details
-      readonly: false
+      options: null
+      readonly: true
       required: false
-      sort: 7
+      sort: 1
       special:
-        - alias
-        - no-data
+        - uuid
       translations: null
       validation: null
       validation_message: null
       width: full
-  - collection: houses
-    field: house_address
-    type: string
-    meta:
-      collection: houses
-      conditions: null
-      display: formatted-value
-      display_options: null
-      field: house_address
-      group: null
-      hidden: false
-      interface: input
-      note: null
-      options:
-        iconLeft: directions
-        placeholder: Enter your house adress
-        trim: true
-      readonly: false
-      required: true
-      sort: 4
-      special: null
-      translations:
-        - language: en-US
-          translation: Address
-        - language: es-ES
-          translation: Dirección
-      validation: null
-      validation_message: null
-      width: full
     schema:
-      name: house_address
-      table: houses
-      data_type: character varying
+      name: id
+      table: comments
+      data_type: uuid
       default_value: null
-      max_length: 255
+      max_length: null
       numeric_precision: null
       numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
       is_generated: false
       generation_expression: null
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: houses
-    field: house_bathrooms
+  - collection: comments
+    field: sort
     type: integer
     meta:
-      collection: houses
-      conditions: null
-      display: formatted-value
-      display_options: null
-      field: house_bathrooms
-      group: null
-      hidden: false
-      interface: input
-      note: null
-      options:
-        iconLeft: bed
-        max: 100
-        min: 1
-      readonly: false
-      required: true
-      sort: 9
-      special: null
-      translations:
-        - language: en-US
-          translation: Bathrooms
-        - language: es-ES
-          translation: 'Baños '
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: house_bathrooms
-      table: houses
-      data_type: integer
-      default_value: null
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: houses
-    field: house_bedrooms
-    type: integer
-    meta:
-      collection: houses
-      conditions: null
-      display: formatted-value
-      display_options: null
-      field: house_bedrooms
-      group: null
-      hidden: false
-      interface: input
-      note: null
-      options:
-        iconLeft: bed
-        max: 100
-        min: 1
-      readonly: false
-      required: true
-      sort: 8
-      special: null
-      translations:
-        - language: en-US
-          translation: Bedrooms
-        - language: es-ES
-          translation: Cuartos
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: house_bedrooms
-      table: houses
-      data_type: integer
-      default_value: null
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: houses
-    field: house_city
-    type: string
-    meta:
-      collection: houses
+      collection: comments
       conditions: null
       display: null
       display_options: null
-      field: house_city
+      field: sort
       group: null
-      hidden: false
+      hidden: true
       interface: input
-      note: null
-      options:
-        iconLeft: location_on
-        placeholder: House city
-        trim: true
-      readonly: false
-      required: true
-      sort: 5
-      special: null
-      translations:
-        - language: en-US
-          translation: City
-        - language: es-ES
-          translation: Ciudad
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: house_city
-      table: houses
-      data_type: character varying
-      default_value: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: houses
-    field: house_description
-    type: text
-    meta:
-      collection: houses
-      conditions: null
-      display: null
-      display_options: null
-      field: house_description
-      group: null
-      hidden: false
-      interface: input-rich-text-html
       note: null
       options: null
       readonly: false
-      required: true
-      sort: 13
+      required: false
+      sort: 4
       special: null
-      translations:
-        - language: en-US
-          translation: House description text
-        - language: es-ES
-          translation: Texto de descripción de la casa
+      translations: null
       validation: null
       validation_message: null
       width: full
     schema:
-      name: house_description
-      table: houses
+      name: sort
+      table: comments
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: comments
+    field: user_created
+    type: uuid
+    meta:
+      collection: comments
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: comments
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: comments
+    field: date_created
+    type: timestamp
+    meta:
+      collection: comments
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: comments
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: comments
+    field: user_updated
+    type: uuid
+    meta:
+      collection: comments
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 7
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: comments
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: comments
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: comments
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 8
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: comments
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: comments
+    field: email
+    type: string
+    meta:
+      collection: comments
+      conditions: null
+      display: null
+      display_options: null
+      field: email
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: alternate_email
+        placeholder: emaildeprueba@email.com
+      readonly: false
+      required: true
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: email
+      table: comments
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: comments
+    field: comment
+    type: text
+    meta:
+      collection: comments
+      conditions: null
+      display: null
+      display_options: null
+      field: comment
+      group: null
+      hidden: false
+      interface: input-multiline
+      note: null
+      options:
+        placeholder: Contenido de su comentario
+        trim: true
+      readonly: false
+      required: true
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: comment
+      table: comments
       data_type: text
       default_value: null
       max_length: null
@@ -1576,83 +852,42 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: houses
-    field: house_image
-    type: uuid
+  - collection: comments
+    field: status
+    type: string
     meta:
-      collection: houses
+      collection: comments
       conditions: null
-      display: image
+      display: formatted-value
       display_options: null
-      field: house_image
+      field: status
       group: null
       hidden: false
-      interface: file-image
+      interface: select-dropdown
       note: null
-      options: null
+      options:
+        choices:
+          - text: Pendiente a aprobar
+            value: pendant
+          - text: Aprobado
+            value: aproved
       readonly: false
       required: true
-      sort: 2
-      special:
-        - file
+      sort: 9
+      special: null
       translations:
         - language: en-US
-          translation: Image
+          translation: Comment status
         - language: es-ES
-          translation: Imagen
+          translation: Estado del comentario
       validation: null
       validation_message: null
       width: full
     schema:
-      name: house_image
-      table: houses
-      data_type: uuid
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: directus_files
-      foreign_key_column: id
-  - collection: houses
-    field: house_neighborhood
-    type: string
-    meta:
-      collection: houses
-      conditions: null
-      display: null
-      display_options: null
-      field: house_neighborhood
-      group: null
-      hidden: false
-      interface: input
-      note: null
-      options:
-        iconLeft: map
-        placeholder: null
-        trim: true
-      readonly: false
-      required: false
-      sort: 6
-      special: null
-      translations:
-        - language: en-US
-          translation: Neighborhood
-        - language: es-ES
-          translation: Vecindario
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: house_neighborhood
-      table: houses
+      name: status
+      table: comments
       data_type: character varying
-      default_value: null
+      default_value: pendant
       max_length: 255
       numeric_precision: null
       numeric_scale: null
@@ -1664,140 +899,49 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: houses
-    field: house_sqft
-    type: integer
+  - collection: comments
+    field: post
+    type: uuid
     meta:
-      collection: houses
+      collection: comments
       conditions: null
       display: null
       display_options: null
-      field: house_sqft
+      field: post
       group: null
-      hidden: false
-      interface: input
-      note: House SQFT
-      options:
-        alwaysShowValue: true
-        iconLeft: resize
-        max: 30000
-        maxValue: 30000
-        min: 10
-        minValue: 1000
-        stepInterval: 100
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options: null
       readonly: false
-      required: true
+      required: false
       sort: 10
       special: null
-      translations:
-        - language: en-US
-          translation: SQFT Área
-        - language: es-ES
-          translation: Área en SQFT
+      translations: null
       validation: null
       validation_message: null
       width: full
     schema:
-      name: house_sqft
-      table: houses
-      data_type: integer
-      default_value: 2000
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: houses
-    field: house_style
-    type: integer
-    meta:
-      collection: houses
-      conditions: null
-      display: null
-      display_options: null
-      field: house_style
-      group: null
-      hidden: false
-      interface: select-dropdown-m2o
-      note: null
-      options:
-        template: '{{house_style}}'
-      readonly: false
-      required: false
-      sort: 12
-      special:
-        - m2o
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: house_style
-      table: houses
-      data_type: integer
+      name: post
+      table: comments
+      data_type: uuid
       default_value: null
       max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
+      numeric_precision: null
+      numeric_scale: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       is_generated: false
       generation_expression: null
       has_auto_increment: false
-      foreign_key_table: house_style
+      foreign_key_table: post
       foreign_key_column: id
-  - collection: houses
-    field: house_type
-    type: integer
-    meta:
-      collection: houses
-      conditions: null
-      display: null
-      display_options: null
-      field: house_type
-      group: null
-      hidden: false
-      interface: select-dropdown-m2o
-      note: null
-      options:
-        template: '{{type}}'
-      readonly: false
-      required: false
-      sort: 11
-      special:
-        - m2o
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: house_type
-      table: houses
-      data_type: integer
-      default_value: null
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: house_type
-      foreign_key_column: id
-  - collection: houses
+  - collection: post
     field: id
     type: uuid
     meta:
-      collection: houses
+      collection: post
       conditions: null
       display: null
       display_options: null
@@ -1818,7 +962,7 @@ fields:
       width: full
     schema:
       name: id
-      table: houses
+      table: post
       data_type: uuid
       default_value: null
       max_length: null
@@ -1832,11 +976,74 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: houses
+  - collection: post
+    field: status
+    type: string
+    meta:
+      collection: post
+      conditions: null
+      display: labels
+      display_options:
+        choices:
+          - text: $t:published
+            value: published
+            foreground: '#FFFFFF'
+            background: var(--theme--primary)
+          - text: $t:draft
+            value: draft
+            foreground: '#18222F'
+            background: '#D3DAE4'
+          - text: $t:archived
+            value: archived
+            foreground: '#FFFFFF'
+            background: var(--theme--warning)
+        showAsDot: true
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: $t:published
+            value: published
+          - text: $t:draft
+            value: draft
+          - text: $t:archived
+            value: archived
+      readonly: false
+      required: false
+      sort: 4
+      special: null
+      translations:
+        - language: en-US
+          translation: Status
+        - language: es-ES
+          translation: Estado
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: status
+      table: post
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: post
     field: sort
     type: integer
     meta:
-      collection: houses
+      collection: post
       conditions: null
       display: null
       display_options: null
@@ -1848,7 +1055,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 14
+      sort: 7
       special: null
       translations: null
       validation: null
@@ -1856,7 +1063,7 @@ fields:
       width: full
     schema:
       name: sort
-      table: houses
+      table: post
       data_type: integer
       default_value: null
       max_length: null
@@ -1870,37 +1077,33 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: houses
+  - collection: post
     field: user_created
     type: uuid
     meta:
-      collection: houses
+      collection: post
       conditions: null
       display: user
-      display_options:
-        circle: true
+      display_options: null
       field: user_created
       group: null
-      hidden: false
+      hidden: true
       interface: select-dropdown-m2o
       note: null
       options:
         template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      readonly: false
-      required: true
-      sort: 15
-      special: null
-      translations:
-        - language: en-US
-          translation: Creator user
-        - language: es-ES
-          translation: Usuario que lo creó
+      readonly: true
+      required: false
+      sort: 8
+      special:
+        - user-created
+      translations: null
       validation: null
       validation_message: null
       width: half
     schema:
       name: user_created
-      table: houses
+      table: post
       data_type: uuid
       default_value: null
       max_length: null
@@ -1914,11 +1117,51 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_users
       foreign_key_column: id
-  - collection: houses
+  - collection: post
+    field: date_created
+    type: timestamp
+    meta:
+      collection: post
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 9
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: post
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: post
     field: user_updated
     type: uuid
     meta:
-      collection: houses
+      collection: post
       conditions: null
       display: user
       display_options: null
@@ -1931,7 +1174,7 @@ fields:
         template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
       readonly: true
       required: false
-      sort: 17
+      sort: 10
       special:
         - user-updated
       translations: null
@@ -1940,7 +1183,7 @@ fields:
       width: half
     schema:
       name: user_updated
-      table: houses
+      table: post
       data_type: uuid
       default_value: null
       max_length: null
@@ -1954,15 +1197,380 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_users
       foreign_key_column: id
-  - collection: houses_amenity
-    field: amenity_id
-    type: integer
+  - collection: post
+    field: date_updated
+    type: timestamp
     meta:
-      collection: houses_amenity
+      collection: post
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 11
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: post
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: post
+    field: title
+    type: string
+    meta:
+      collection: post
+      conditions: null
+      display: formatted-value
+      display_options:
+        format: true
+      field: title
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: title
+        placeholder: Titulo de mi publicacion
+        trim: true
+      readonly: false
+      required: true
+      sort: 2
+      special: null
+      translations:
+        - language: en-US
+          translation: Tittle
+        - language: es-ES
+          translation: Título
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: title
+      table: post
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: post
+    field: body
+    type: text
+    meta:
+      collection: post
+      conditions: null
+      display: formatted-value
+      display_options:
+        format: true
+      field: body
+      group: null
+      hidden: false
+      interface: input-rich-text-html
+      note: null
+      options:
+        toolbar:
+          - blockquote
+          - bold
+          - bullist
+          - code
+          - customImage
+          - customLink
+          - customMedia
+          - fontfamily
+          - fontsize
+          - fullscreen
+          - h1
+          - h2
+          - h3
+          - hr
+          - italic
+          - numlist
+          - redo
+          - removeformat
+          - underline
+          - undo
+      readonly: false
+      required: true
+      sort: 3
+      special: null
+      translations:
+        - language: en-US
+          translation: Content
+        - language: es-ES
+          translation: Contenido
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: body
+      table: post
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: post
+    field: image
+    type: uuid
+    meta:
+      collection: post
+      conditions: null
+      display: image
+      display_options: null
+      field: image
+      group: null
+      hidden: false
+      interface: file-image
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 6
+      special:
+        - file
+      translations:
+        - language: en-US
+          translation: Main imagen
+        - language: es-ES
+          translation: Imagen principal
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: image
+      table: post
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: post
+    field: slug
+    type: string
+    meta:
+      collection: post
       conditions: null
       display: null
       display_options: null
-      field: amenity_id
+      field: slug
+      group: null
+      hidden: false
+      interface: input
+      note: Copie el titulo y péguelo acá
+      options:
+        iconLeft: null
+        placeholder: Su enlace amigable
+        slug: true
+        trim: true
+      readonly: false
+      required: true
+      sort: 5
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: slug
+      table: post
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: post
+    field: categories
+    type: alias
+    meta:
+      collection: post
+      conditions: null
+      display: null
+      display_options: null
+      field: categories
+      group: null
+      hidden: false
+      interface: list-m2m
+      note: null
+      options:
+        enableLink: true
+      readonly: false
+      required: false
+      sort: 12
+      special:
+        - m2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: post
+    field: comments
+    type: alias
+    meta:
+      collection: post
+      conditions: null
+      display: null
+      display_options: null
+      field: comments
+      group: null
+      hidden: true
+      interface: list-o2m
+      note: null
+      options:
+        enableLink: true
+        enableSearchFilter: true
+        fields:
+          - comment
+          - date_created
+          - email
+        layout: table
+      readonly: false
+      required: false
+      sort: 13
+      special:
+        - o2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: post_category
+    field: id
+    type: integer
+    meta:
+      collection: post_category
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: post_category
+      data_type: integer
+      default_value: nextval('post_category_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: post_category
+    field: post_id
+    type: uuid
+    meta:
+      collection: post_category
+      conditions: null
+      display: null
+      display_options: null
+      field: post_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: post_id
+      table: post_category
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: post
+      foreign_key_column: id
+  - collection: post_category
+    field: category_id
+    type: uuid
+    meta:
+      collection: post_category
+      conditions: null
+      display: null
+      display_options: null
+      field: category_id
       group: null
       hidden: true
       interface: null
@@ -1977,46 +1585,8 @@ fields:
       validation_message: null
       width: full
     schema:
-      name: amenity_id
-      table: houses_amenity
-      data_type: integer
-      default_value: null
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: amenity
-      foreign_key_column: id
-  - collection: houses_amenity
-    field: houses_id
-    type: uuid
-    meta:
-      collection: houses_amenity
-      conditions: null
-      display: null
-      display_options: null
-      field: houses_id
-      group: null
-      hidden: true
-      interface: null
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: 2
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: houses_id
-      table: houses_amenity
+      name: category_id
+      table: post_category
       data_type: uuid
       default_value: null
       max_length: null
@@ -2028,131 +1598,13 @@ fields:
       is_generated: false
       generation_expression: null
       has_auto_increment: false
-      foreign_key_table: houses
+      foreign_key_table: category
       foreign_key_column: id
-  - collection: houses_amenity
+  - collection: subscritions
     field: id
     type: integer
     meta:
-      collection: houses_amenity
-      conditions: null
-      display: null
-      display_options: null
-      field: id
-      group: null
-      hidden: true
-      interface: null
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: 1
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: id
-      table: houses_amenity
-      data_type: integer
-      default_value: nextval('houses_amenity_id_seq'::regclass)
-      max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_nullable: false
-      is_unique: true
-      is_primary_key: true
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: true
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: images
-    field: date_created
-    type: timestamp
-    meta:
-      collection: images
-      conditions: null
-      display: datetime
-      display_options:
-        relative: true
-      field: date_created
-      group: null
-      hidden: true
-      interface: datetime
-      note: null
-      options: null
-      readonly: true
-      required: false
-      sort: 4
-      special:
-        - date-created
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: date_created
-      table: images
-      data_type: timestamp with time zone
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: images
-    field: date_updated
-    type: timestamp
-    meta:
-      collection: images
-      conditions: null
-      display: datetime
-      display_options:
-        relative: true
-      field: date_updated
-      group: null
-      hidden: true
-      interface: datetime
-      note: null
-      options: null
-      readonly: true
-      required: false
-      sort: 6
-      special:
-        - date-updated
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-    schema:
-      name: date_updated
-      table: images
-      data_type: timestamp with time zone
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: images
-    field: id
-    type: integer
-    meta:
-      collection: images
+      collection: subscritions
       conditions: null
       display: null
       display_options: null
@@ -2172,9 +1624,9 @@ fields:
       width: full
     schema:
       name: id
-      table: images
+      table: subscritions
       data_type: integer
-      default_value: nextval('images_id_seq'::regclass)
+      default_value: nextval('subscritions_id_seq'::regclass)
       max_length: null
       numeric_precision: 32
       numeric_scale: 0
@@ -2186,11 +1638,11 @@ fields:
       has_auto_increment: true
       foreign_key_table: null
       foreign_key_column: null
-  - collection: images
+  - collection: subscritions
     field: sort
     type: integer
     meta:
-      collection: images
+      collection: subscritions
       conditions: null
       display: null
       display_options: null
@@ -2210,7 +1662,7 @@ fields:
       width: full
     schema:
       name: sort
-      table: images
+      table: subscritions
       data_type: integer
       default_value: null
       max_length: null
@@ -2224,11 +1676,11 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: images
+  - collection: subscritions
     field: user_created
     type: uuid
     meta:
-      collection: images
+      collection: subscritions
       conditions: null
       display: user
       display_options: null
@@ -2250,7 +1702,7 @@ fields:
       width: half
     schema:
       name: user_created
-      table: images
+      table: subscritions
       data_type: uuid
       default_value: null
       max_length: null
@@ -2264,11 +1716,51 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_users
       foreign_key_column: id
-  - collection: images
+  - collection: subscritions
+    field: date_created
+    type: timestamp
+    meta:
+      collection: subscritions
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: subscritions
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: subscritions
     field: user_updated
     type: uuid
     meta:
-      collection: images
+      collection: subscritions
       conditions: null
       display: user
       display_options: null
@@ -2290,7 +1782,7 @@ fields:
       width: half
     schema:
       name: user_updated
-      table: images
+      table: subscritions
       data_type: uuid
       default_value: null
       max_length: null
@@ -2304,55 +1796,53 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_users
       foreign_key_column: id
+  - collection: subscritions
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: subscritions
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: subscritions
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
 relations:
-  - collection: amenity
-    field: houses
-    related_collection: houses
-    meta:
-      junction_field: null
-      many_collection: amenity
-      many_field: houses
-      one_allowed_collections: null
-      one_collection: houses
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: amenities
-      sort_field: null
-    schema:
-      table: amenity
-      column: houses
-      foreign_key_table: houses
-      foreign_key_column: id
-      constraint_name: amenity_houses_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
-  - collection: bookings
-    field: house_id
-    related_collection: houses
-    meta:
-      junction_field: null
-      many_collection: bookings
-      many_field: house_id
-      one_allowed_collections: null
-      one_collection: houses
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: bookings
-      sort_field: sort
-    schema:
-      table: bookings
-      column: house_id
-      foreign_key_table: houses
-      foreign_key_column: id
-      constraint_name: bookings_house_id_foreign
-      on_update: NO ACTION
-      on_delete: CASCADE
-  - collection: bookings
+  - collection: category
     field: user_created
     related_collection: directus_users
     meta:
       junction_field: null
-      many_collection: bookings
+      many_collection: category
       many_field: user_created
       one_allowed_collections: null
       one_collection: directus_users
@@ -2361,19 +1851,19 @@ relations:
       one_field: null
       sort_field: null
     schema:
-      table: bookings
+      table: category
       column: user_created
       foreign_key_table: directus_users
       foreign_key_column: id
-      constraint_name: bookings_user_created_foreign
+      constraint_name: category_user_created_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
-  - collection: bookings
+  - collection: category
     field: user_updated
     related_collection: directus_users
     meta:
       junction_field: null
-      many_collection: bookings
+      many_collection: category
       many_field: user_updated
       one_allowed_collections: null
       one_collection: directus_users
@@ -2382,32 +1872,137 @@ relations:
       one_field: null
       sort_field: null
     schema:
-      table: bookings
+      table: category
       column: user_updated
       foreign_key_table: directus_users
       foreign_key_column: id
-      constraint_name: bookings_user_updated_foreign
+      constraint_name: category_user_updated_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
-  - collection: directus_settings
-    field: public_favicon
-    related_collection: directus_files
+  - collection: comments
+    field: user_created
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: comments
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: comments
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: comments_user_created_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: comments
+    field: user_updated
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: comments
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: comments
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: comments_user_updated_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: comments
+    field: post
+    related_collection: post
+    meta:
+      junction_field: null
+      many_collection: comments
+      many_field: post
+      one_allowed_collections: null
+      one_collection: post
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: comments
+      sort_field: null
+    schema:
+      table: comments
+      column: post
+      foreign_key_table: post
+      foreign_key_column: id
+      constraint_name: comments_post_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: directus_webhooks
+    field: migrated_flow
+    related_collection: directus_flows
     meta: null
     schema:
-      table: directus_settings
-      column: public_favicon
-      foreign_key_table: directus_files
+      table: directus_webhooks
+      column: migrated_flow
+      foreign_key_table: directus_flows
       foreign_key_column: id
-      constraint_name: directus_settings_public_favicon_foreign
+      constraint_name: directus_webhooks_migrated_flow_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: post
+    field: user_created
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: post
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: post
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: post_user_created_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
-  - collection: houses
-    field: house_image
+  - collection: post
+    field: user_updated
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: post
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: post
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: post_user_updated_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: post
+    field: image
     related_collection: directus_files
     meta:
       junction_field: null
-      many_collection: houses
-      many_field: house_image
+      many_collection: post
+      many_field: image
       one_allowed_collections: null
       one_collection: directus_files
       one_collection_field: null
@@ -2415,61 +2010,61 @@ relations:
       one_field: null
       sort_field: null
     schema:
-      table: houses
-      column: house_image
+      table: post
+      column: image
       foreign_key_table: directus_files
       foreign_key_column: id
-      constraint_name: houses_house_image_foreign
+      constraint_name: post_image_foreign
       on_update: NO ACTION
       on_delete: SET NULL
-  - collection: houses
-    field: house_style
-    related_collection: house_style
+  - collection: post_category
+    field: category_id
+    related_collection: category
     meta:
-      junction_field: null
-      many_collection: houses
-      many_field: house_style
+      junction_field: post_id
+      many_collection: post_category
+      many_field: category_id
       one_allowed_collections: null
-      one_collection: house_style
+      one_collection: category
       one_collection_field: null
       one_deselect_action: nullify
       one_field: null
       sort_field: null
     schema:
-      table: houses
-      column: house_style
-      foreign_key_table: house_style
+      table: post_category
+      column: category_id
+      foreign_key_table: category
       foreign_key_column: id
-      constraint_name: houses_house_style_foreign
+      constraint_name: post_category_category_id_foreign
       on_update: NO ACTION
       on_delete: SET NULL
-  - collection: houses
-    field: house_type
-    related_collection: house_type
+  - collection: post_category
+    field: post_id
+    related_collection: post
     meta:
-      junction_field: null
-      many_collection: houses
-      many_field: house_type
+      junction_field: category_id
+      many_collection: post_category
+      many_field: post_id
       one_allowed_collections: null
-      one_collection: house_type
+      one_collection: post
       one_collection_field: null
       one_deselect_action: nullify
-      one_field: null
+      one_field: categories
       sort_field: null
     schema:
-      table: houses
-      column: house_type
-      foreign_key_table: house_type
+      table: post_category
+      column: post_id
+      foreign_key_table: post
       foreign_key_column: id
-      constraint_name: houses_house_type_foreign
+      constraint_name: post_category_post_id_foreign
       on_update: NO ACTION
       on_delete: SET NULL
-  - collection: houses
+  - collection: subscritions
     field: user_created
     related_collection: directus_users
     meta:
       junction_field: null
-      many_collection: houses
+      many_collection: subscritions
       many_field: user_created
       one_allowed_collections: null
       one_collection: directus_users
@@ -2478,19 +2073,19 @@ relations:
       one_field: null
       sort_field: null
     schema:
-      table: houses
+      table: subscritions
       column: user_created
       foreign_key_table: directus_users
       foreign_key_column: id
-      constraint_name: houses_user_created_foreign
+      constraint_name: subscritions_user_created_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
-  - collection: houses
+  - collection: subscritions
     field: user_updated
     related_collection: directus_users
     meta:
       junction_field: null
-      many_collection: houses
+      many_collection: subscritions
       many_field: user_updated
       one_allowed_collections: null
       one_collection: directus_users
@@ -2499,94 +2094,10 @@ relations:
       one_field: null
       sort_field: null
     schema:
-      table: houses
+      table: subscritions
       column: user_updated
       foreign_key_table: directus_users
       foreign_key_column: id
-      constraint_name: houses_user_updated_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
-  - collection: houses_amenity
-    field: amenity_id
-    related_collection: amenity
-    meta:
-      junction_field: houses_id
-      many_collection: houses_amenity
-      many_field: amenity_id
-      one_allowed_collections: null
-      one_collection: amenity
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: null
-      sort_field: null
-    schema:
-      table: houses_amenity
-      column: amenity_id
-      foreign_key_table: amenity
-      foreign_key_column: id
-      constraint_name: houses_amenity_amenity_id_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
-  - collection: houses_amenity
-    field: houses_id
-    related_collection: houses
-    meta:
-      junction_field: amenity_id
-      many_collection: houses_amenity
-      many_field: houses_id
-      one_allowed_collections: null
-      one_collection: houses
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: null
-      sort_field: null
-    schema:
-      table: houses_amenity
-      column: houses_id
-      foreign_key_table: houses
-      foreign_key_column: id
-      constraint_name: houses_amenity_houses_id_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
-  - collection: images
-    field: user_created
-    related_collection: directus_users
-    meta:
-      junction_field: null
-      many_collection: images
-      many_field: user_created
-      one_allowed_collections: null
-      one_collection: directus_users
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: null
-      sort_field: null
-    schema:
-      table: images
-      column: user_created
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: images_user_created_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
-  - collection: images
-    field: user_updated
-    related_collection: directus_users
-    meta:
-      junction_field: null
-      many_collection: images
-      many_field: user_updated
-      one_allowed_collections: null
-      one_collection: directus_users
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: null
-      sort_field: null
-    schema:
-      table: images
-      column: user_updated
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      constraint_name: images_user_updated_foreign
+      constraint_name: subscritions_user_updated_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
